@@ -1,0 +1,51 @@
+# 开发环境配置
+springdoc:
+  paths-to-match: /api/**
+  swagger-ui:
+    operations-sorter: alpha
+spring:
+  mail:
+    host: smtp.qq.com
+    username: 123456@qq.com
+    password: urkyutehezfxjhba
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: /
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  security:
+    jwt:
+      key: 'abcdefghijklmn'
+      expire: 72 # 以小时为单位
+      limit:
+        base: 10
+        upgrade: 300
+        frequency: 30
+    filter:
+      order: -100 # 默认优先级为-100
+  web:
+    verify:
+      mail-limit: 60
+    flow:
+      period: 3
+      limit: 50
+      block: 30
+    cors:
+      origin: '*' # 根据需求可以写成对应的请求的域名加端口
+      credentials: false
+      methods: '*'
+server:
+  error:
+    path: /error
+
+

@@ -1,0 +1,48 @@
+#生产环境配置
+#server:
+#  port: 80
+springdoc:
+  api-docs:
+    enabled: false # 生产环境关闭swagger文档
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+spring:
+  mail:
+    host: smtp.qq.com
+    username: 123456@qq.com
+    password: urkyutehezfxjhba
+  data:
+    redis:
+      host: app_redis
+  rabbitmq:
+    addresses: app_rabbitmq
+    username: admin
+    password: admin
+    virtual-host: /
+  datasource:
+    url: jdbc:mysql://app_mysql:3306/test
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  security:
+    jwt:
+      key: 'abcdefghijklmn'
+      expire: 72
+      limit:
+        base: 10
+        upgrade: 300
+        frequency: 30
+    filter:
+      order: -100
+  web:
+    verify:
+      mail-limit: 60
+    flow:
+      period: 3
+      limit: 10
+      block: 30
+    cors:
+      origin: '*'
+      credentials: false
+      methods: '*'

@@ -1,0 +1,35 @@
+docker-data/
+# intermediates files or directories
+.swp
+.log
+logs/
+
+# archives files
+.bak
+.7z
+.jar
+.rar
+.zip
+.gz
+.gzip
+.tgz
+
+# node
+node_modules/
+dist/
+
+# idea
+.idea/
+target/
+out/
+*.iws
+*.iml
+*.ipr
+
+# vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
